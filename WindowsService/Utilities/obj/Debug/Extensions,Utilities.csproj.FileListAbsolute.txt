@@ -1,4 +1,0 @@
-D:\GIT_REPOSITORY\FileUploadService\WindowsService\Utilities\bin\Debug\SGCombo.Extensions.Utilites.dll
-D:\GIT_REPOSITORY\FileUploadService\WindowsService\Utilities\bin\Debug\SGCombo.Extensions.Utilites.pdb
-D:\GIT_REPOSITORY\FileUploadService\WindowsService\Utilities\obj\Debug\SGCombo.Extensions.Utilites.dll
-D:\GIT_REPOSITORY\FileUploadService\WindowsService\Utilities\obj\Debug\SGCombo.Extensions.Utilites.pdb

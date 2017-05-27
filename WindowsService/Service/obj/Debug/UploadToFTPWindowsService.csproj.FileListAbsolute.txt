@@ -1,1 +1,0 @@
-D:\GIT_REPOSITORY\FileUploadService\WindowsService.UploadFileToFTP\Service\obj\Debug\UploadToFTPWindowsService.csprojResolveAssemblyReference.cache

@@ -1,1 +1,0 @@
-D:\GIT_REPOSITORY\FileUploadService\WindowsService.UploadFileToFTP\bin\Debug\WM_UploadService.exe.config
