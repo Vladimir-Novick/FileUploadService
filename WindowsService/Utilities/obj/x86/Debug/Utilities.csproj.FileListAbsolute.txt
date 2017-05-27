@@ -1,0 +1,12 @@
+D:\Vita5\Gidhub\driver-master\Utilities\bin\x86\Debug\Utilities.dll
+D:\Vita5\Gidhub\driver-master\Utilities\bin\x86\Debug\Utilities.pdb
+D:\Vita5\Gidhub\driver-master\Utilities\bin\x86\Debug\Newtonsoft.Json.dll
+D:\Vita5\Gidhub\driver-master\Utilities\bin\x86\Debug\Newtonsoft.Json.xml
+D:\Vita5\Gidhub\driver-master\Utilities\obj\x86\Debug\Utilities.dll
+D:\Vita5\Gidhub\driver-master\Utilities\obj\x86\Debug\Utilities.pdb
+D:\Vita5\WebOrderClient.git\Utilities\bin\x86\Debug\Utilities.dll
+D:\Vita5\WebOrderClient.git\Utilities\bin\x86\Debug\Utilities.pdb
+D:\Vita5\WebOrderClient.git\Utilities\bin\x86\Debug\Newtonsoft.Json.dll
+D:\Vita5\WebOrderClient.git\Utilities\bin\x86\Debug\Newtonsoft.Json.xml
+D:\Vita5\WebOrderClient.git\Utilities\obj\x86\Debug\Utilities.dll
+D:\Vita5\WebOrderClient.git\Utilities\obj\x86\Debug\Utilities.pdb

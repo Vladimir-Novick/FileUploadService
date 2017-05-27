@@ -1,0 +1,4 @@
+D:\Vita5\WebOrderClient.git\Utilities\bin\x86\Release\Utilities.dll
+D:\Vita5\WebOrderClient.git\Utilities\bin\x86\Release\Newtonsoft.Json.dll
+D:\Vita5\WebOrderClient.git\Utilities\bin\x86\Release\Newtonsoft.Json.xml
+D:\Vita5\WebOrderClient.git\Utilities\obj\x86\Release\Utilities.dll
