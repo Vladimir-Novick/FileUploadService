@@ -84,14 +84,10 @@ namespace SGCombo.Services
 
         private static void saveStatus(String ORDER_ID, String DirectoryID, String Status, int Status_ID, String connectionString)
         {
-            saveStatus(ORDER_ID, DirectoryID, Status, Status_ID,connectionString, "");
-        }
-
-        private static void saveStatus(String ORDER_ID, String DirectoryID, String Status, int Status_ID, String databaseConnectionString, String ERROR_string)
-        {
-           
 
         }
+
+
 
 
         private static void BackgroundWorkerAsyncRequest_DoWork(object sender, DoWorkEventArgs e)

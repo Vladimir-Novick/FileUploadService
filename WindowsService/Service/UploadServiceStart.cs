@@ -37,7 +37,7 @@ namespace SGCombo.Services
         public string NET_FTPServer { get; set; }
         public string NET_userName { get; set; }
         public string NET_password { get; set; }
-        public string DataBaseConnectionString { get; set; }
+
 
         private Boolean deleteFolder { get; set; }
 
@@ -48,7 +48,7 @@ namespace SGCombo.Services
         public SGCombo_UploadServiceStart()
         {
 
-            DataBaseConnectionString = ConfigurationManager.AppSettings["DataBaseConnectionString"];
+
 
             watchDirectory = ConfigurationManager.AppSettings["CacheFolder"];
             logDirectory = watchDirectory + @"/Log";
