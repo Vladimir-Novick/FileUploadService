@@ -72,6 +72,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -83,6 +84,9 @@
   <ItemGroup>
     <Compile Include="IdentifyQueryBackground.cs" />
     <Compile Include="JobStack.cs" />
+    <Compile Include="ServiceInstaller .cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UploadService.cs">
       <SubType>Component</SubType>
     </Compile>

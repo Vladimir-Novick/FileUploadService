@@ -253,7 +253,7 @@ namespace SGCombo.Extensions.Utilites
             {
                 hex.AppendFormat("{0:x2}", b);
             }
-            
+
             return hex.ToString().ToLower();
         }
 
@@ -549,7 +549,7 @@ namespace SGCombo.Extensions.Utilites
             }
         }
     }
-    
+
     public class TimerHelper
     {
         public string Desc = "None";

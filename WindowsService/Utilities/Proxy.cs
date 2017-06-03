@@ -159,7 +159,7 @@ namespace SGCombo.Extensions.Utilites
 
             if (Connection == null) return MatchList;
             if (Connection.Matches == null) return MatchList;
-            
+
             foreach (Connection Match in Connection.Matches)
             {
                 if (!Match.Connected) continue;

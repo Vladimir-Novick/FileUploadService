@@ -13,7 +13,6 @@ using System.Text;
 using System.IO;
 using System.Security.Cryptography;
 
-
 namespace SGCombo.Extensions.Utils
 {
 
@@ -26,11 +25,10 @@ namespace SGCombo.Extensions.Utils
         static string initVector = "e5Fc3D46g7H8@1B2";
         static int keySize = 256;
 
-
     public static string MD5Hash(string text)
     {
       MD5 md5 = new MD5CryptoServiceProvider();
-      
+
       md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
  
       byte[] result = md5.Hash;
@@ -43,14 +41,6 @@ namespace SGCombo.Extensions.Utils
  
       return strBuilder.ToString();
     }
- 
-
-
-    
-
-
-
-
 
         public static String Encrypt(string plainText)
         {
@@ -64,8 +54,6 @@ namespace SGCombo.Extensions.Utils
             return cipherText;
         }
 
-
-
         public static string Decrypt(string cipherText)
         {
             string plainText = Crypto.Decrypt(cipherText,
@@ -78,9 +66,7 @@ namespace SGCombo.Extensions.Utils
             return plainText;
         }
 
-
 // ------------------------------------------------------------
-
 
         public static string Encrypt(string plainText,
                                      string passPhrase,

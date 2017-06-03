@@ -69,7 +69,7 @@ namespace SGCombo.Extensions.Utils
                 OnComplete(ex.Message);
                 return false;
             }
-            
+
         }
 
         public string SourceFilePath { get; set; }

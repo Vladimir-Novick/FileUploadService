@@ -19,7 +19,7 @@ namespace SGCombo.Extensions.Utilites
 	{
         public readonly string type;
         public readonly string Json;
-        
+
         public cMsg(string Json)
         {
             this.Json = Json;

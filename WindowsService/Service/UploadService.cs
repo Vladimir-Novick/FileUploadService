@@ -26,22 +26,14 @@ namespace SGCombo.Upload.FTP.Service
             this.OnStop();
         }
 
-
-
         private System.ComponentModel.Container components = null;
-
-
 
         public SGCombo_UploadService()
         {
 
             InitializeComponent();
 
-
         }
-
-
-
 
         static void Main(string[] args)
         {
@@ -56,32 +48,24 @@ namespace SGCombo.Upload.FTP.Service
             }
         }
 
-
-
-
         static void Main1()
         {
             System.ServiceProcess.ServiceBase[] ServicesToRun;
-
 
             ServicesToRun = new System.ServiceProcess.ServiceBase[] { new SGCombo_UploadService() };
 
             System.ServiceProcess.ServiceBase.Run(ServicesToRun);
         }
 
-
         private void InitializeComponent()
         {
  
             this.ServiceName = "SGCombo.FTP.Uploader";
 
-
             String s = System.AppDomain.CurrentDomain.BaseDirectory;
             System.IO.Directory.SetCurrentDirectory(s);
 
-
         }
-
 
         protected override void Dispose(bool disposing)
         {
@@ -99,15 +83,13 @@ namespace SGCombo.Upload.FTP.Service
 
         protected override void OnStart(string[] args)
         {
-            
+
             wmServiceStart = new SGCombo_UploadServiceStart();
             ((SGCombo_UploadServiceStart)wmServiceStart).OnStart();
         }
 
-
         protected override void OnStop()
         {
-
 
             ((SGCombo_UploadServiceStart)wmServiceStart).OnStart(); ((SGCombo_UploadServiceStart)wmServiceStart).OnStop();
 

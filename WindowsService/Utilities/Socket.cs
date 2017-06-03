@@ -42,7 +42,7 @@ namespace SGCombo.Extensions.Utilites
 		public byte Index = 0;
 		public byte Attribute = 0;
 		public bool Corrupt = false;
-		
+
 		public PacketData(byte[] Data)
 		{
 			this.Data = Data;
@@ -462,7 +462,7 @@ namespace SGCombo.Extensions.Utilites
                 Close("ReadCallback: " + se.Message);
                 return;
             }
-            
+
             base.HandleRead(bytesRead);
 
             Read();

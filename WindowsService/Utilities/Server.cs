@@ -24,7 +24,7 @@ namespace SGCombo.Extensions.Utilites
         internal DataStream Encoder = null;
         internal WebBufffer WebData = null;
         internal SocketInterface Socket = null;
-       
+
         public volatile bool LoggedOut = false;
         private volatile bool isClosed = false;
         private volatile bool SendedQuit = false;
@@ -230,7 +230,7 @@ namespace SGCombo.Extensions.Utilites
                         return;
                     }
             }
-            
+
             Send(Payload.Serialize());
         }
 
@@ -562,7 +562,7 @@ namespace SGCombo.Extensions.Utilites
             {
                 Remove(Ctx, "Server is closing: " + Reason, false);
             }
-            
+
             Keys.Clear();
             Clients.Clear();
 
@@ -590,7 +590,7 @@ namespace SGCombo.Extensions.Utilites
 
             return Clients.Addb(Connection.GUID, Connection);
         }
-  
+
         public List<Connection> Get(string Key, bool Devices)
         {
             if (Keys == null) return null;
@@ -619,7 +619,7 @@ namespace SGCombo.Extensions.Utilites
             if (Clients == null) return false;
             return Clients.Contains(Connection);
         }
-        
+
         public void Remove(Connection Context, string Reason, bool Retry)
         {
             if (Clients == null) return;
@@ -639,7 +639,7 @@ namespace SGCombo.Extensions.Utilites
             {
                 string Desc = "(device)";
                 if (!Context.Device) Desc = "(client)";
-            
+
                 Write("Logout: " + Context.Endpoint + " - " + Context.Key + " " + Desc + " - " + Reason);
             }
 

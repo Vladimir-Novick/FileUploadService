@@ -34,14 +34,13 @@ namespace SGCombo.Extensions
                 try
                 {
 
-                    
                     DateTime dateNow = DateTime.Now;
                     String text = String.Format("{0:00}:{1:00}:{2:00} - {3}", dateNow.Hour, dateNow.Minute, dateNow.Second, message);
                     String logFile = logDirectory + "/" + dateNow.Year.ToString() + "-" + (dateNow.Month + 1).ToString().PadLeft(2, '0') + "-" + dateNow.Day + "." + extention;
 
                     if (!File.Exists(logFile))
                     {
-                        
+
                         using (StreamWriter sw = File.CreateText(logFile))
                         {
                             sw.WriteLine(text);

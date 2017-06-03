@@ -15,11 +15,6 @@ namespace SGCombo.Extensions.Utils
     public class BarCodeUtils
     {
 
-
-
-
-
-
         public static string getBarcod(String orderNo, String deviceName)
         {
 

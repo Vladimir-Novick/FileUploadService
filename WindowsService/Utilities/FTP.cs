@@ -16,7 +16,7 @@ namespace SGCombo.Extensions
 {
     public class Ftp
     {
-      
+
     private string host = null;
     private string user = null;
     private string pass = null;
@@ -25,10 +25,8 @@ namespace SGCombo.Extensions
     private Stream ftpStream = null;
     private int bufferSize = 2048;
     public const string OK = "OK"; 
-        
 
     public Ftp(string hostIP, string userName, string password) { host = hostIP; user = userName; pass = password; }
-
 
     public bool checkConnection()
     {
@@ -85,7 +83,6 @@ namespace SGCombo.Extensions
         return Ftp.OK;
     }
 
-
     public string upload(string remoteFile, string localFile)
     {
         try
@@ -130,22 +127,21 @@ namespace SGCombo.Extensions
         return Ftp.OK;
     }
 
-
     public string delete(string deleteFile)
     {
         try
         {
 
             ftpRequest = (FtpWebRequest)WebRequest.Create(host + "/" + deleteFile);
-      
+
             ftpRequest.Credentials = new NetworkCredential(user, pass);
-        
+
             ftpRequest.UseBinary = true;
             ftpRequest.UsePassive = true;
             ftpRequest.KeepAlive = true;
-     
+
             ftpRequest.Method = WebRequestMethods.Ftp.DeleteFile;
-   
+
             ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
 
             ftpResponse.Close();
@@ -154,27 +150,26 @@ namespace SGCombo.Extensions
         catch (Exception ex) { return ex.ToString(); }
         return Ftp.OK;
     }
-
 
     public string rename(string currentFileNameAndPath, string newFileName, bool KeepAlive)
     {
         try
         {
-           
+
             ftpRequest = (FtpWebRequest)WebRequest.Create(host + "/" + currentFileNameAndPath);
-         
+
             ftpRequest.Credentials = new NetworkCredential(user, pass);
-         
+
             ftpRequest.UseBinary = true;
             ftpRequest.UsePassive = true;
             ftpRequest.KeepAlive = KeepAlive;
-        
+
             ftpRequest.Method = WebRequestMethods.Ftp.Rename;
-          
+
             ftpRequest.RenameTo = newFileName;
-             
+
             ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
-             
+
             ftpResponse.Close();
             ftpRequest = null;
         }
@@ -182,24 +177,23 @@ namespace SGCombo.Extensions
         return Ftp.OK;
     }
 
-     
     public string createDirectory(string newDirectory)
     {
         try
         {
-             
+
             ftpRequest = (FtpWebRequest)WebRequest.Create(host + "/" + newDirectory);
-             
+
             ftpRequest.Credentials = new NetworkCredential(user, pass);
-          
+
             ftpRequest.UseBinary = true;
             ftpRequest.UsePassive = true;
             ftpRequest.KeepAlive = true;
-             
+
             ftpRequest.Method = WebRequestMethods.Ftp.MakeDirectory;
-             
+
             ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
-             
+
             ftpResponse.Close();
             ftpRequest = null;
         }
@@ -212,33 +206,33 @@ namespace SGCombo.Extensions
     {
         try
         {
-             
+
             ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + fileName);
-             
+
             ftpRequest.Credentials = new NetworkCredential(user, pass);
             /* When in doubt, use these options */
             ftpRequest.UseBinary = true;
             ftpRequest.UsePassive = true;
             ftpRequest.KeepAlive = true;
-             
+
             ftpRequest.Method = WebRequestMethods.Ftp.GetDateTimestamp;
-             
+
             ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
-             
+
             ftpStream = ftpResponse.GetResponseStream();
             /* Get the FTP Server's Response Stream */
             StreamReader ftpReader = new StreamReader(ftpStream);
-             
+
             string fileInfo = null;
-             
+
             try { fileInfo = ftpReader.ReadToEnd(); }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-             
+
             ftpReader.Close();
             ftpStream.Close();
             ftpResponse.Close();
             ftpRequest = null;
-             
+
             return fileInfo;
         }
         catch (Exception ex) { return "Error: " + ex.ToString(); }
@@ -246,72 +240,70 @@ namespace SGCombo.Extensions
         return "";
     }
 
-     
     public string getFileSize(string fileName)
     {
         try
         {
-             
+
             ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + fileName);
-             
+
             ftpRequest.Credentials = new NetworkCredential(user, pass);
             /* When in doubt, use these options */
             ftpRequest.UseBinary = true;
             ftpRequest.UsePassive = true;
             ftpRequest.KeepAlive = true;
-             
+
             ftpRequest.Method = WebRequestMethods.Ftp.GetFileSize;
-             
+
             ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
-             
+
             ftpStream = ftpResponse.GetResponseStream();
             /* Get the FTP Server's Response Stream */
             StreamReader ftpReader = new StreamReader(ftpStream);
-             
+
             string fileInfo = null;
-             
+
             try { while (ftpReader.Peek() != -1) { fileInfo = ftpReader.ReadToEnd(); } }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-             
+
             ftpReader.Close();
             ftpStream.Close();
             ftpResponse.Close();
             ftpRequest = null;
-             
+
             return fileInfo;
         }
         catch (Exception ex) { return "Error: " + ex.ToString(); }
-         
+
         return "";
     }
 
-  
     public string[] directoryListSimple(string directory)
     {
         try
         {
-             
+
             ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + directory);
-             
+
             ftpRequest.Credentials = new NetworkCredential(user, pass);
             /* When in doubt, use these options */
             ftpRequest.UseBinary = true;
             ftpRequest.UsePassive = true;
             ftpRequest.KeepAlive = true;
-             
+
             ftpRequest.Method = WebRequestMethods.Ftp.ListDirectory;
-             
+
             ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
-             
+
             ftpStream = ftpResponse.GetResponseStream();
             /* Get the FTP Server's Response Stream */
             StreamReader ftpReader = new StreamReader(ftpStream);
-             
+
             string directoryRaw = null;
-             
+
             try { while (ftpReader.Peek() != -1) { directoryRaw += ftpReader.ReadLine() + "|"; } }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-             
+
             ftpReader.Close();
             ftpStream.Close();
             ftpResponse.Close();
@@ -321,7 +313,7 @@ namespace SGCombo.Extensions
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
         }
         catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-         
+
         return new string[] { "" };
     }
 
@@ -330,28 +322,28 @@ namespace SGCombo.Extensions
     {
         try
         {
-             
+
             ftpRequest = (FtpWebRequest)FtpWebRequest.Create(host + "/" + directory);
-             
+
             ftpRequest.Credentials = new NetworkCredential(user, pass);
             /* When in doubt, use these options */
             ftpRequest.UseBinary = true;
             ftpRequest.UsePassive = true;
             ftpRequest.KeepAlive = true;
-             
+
             ftpRequest.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
-             
+
             ftpResponse = (FtpWebResponse)ftpRequest.GetResponse();
-             
+
             ftpStream = ftpResponse.GetResponseStream();
             /* Get the FTP Server's Response Stream */
             StreamReader ftpReader = new StreamReader(ftpStream);
-             
+
             string directoryRaw = null;
-             
+
             try { while (ftpReader.Peek() != -1) { directoryRaw += ftpReader.ReadLine() + "|"; } }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-             
+
             ftpReader.Close();
             ftpStream.Close();
             ftpResponse.Close();
@@ -361,7 +353,7 @@ namespace SGCombo.Extensions
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
         }
         catch (Exception ex) { Console.WriteLine(ex.ToString()); }
-         
+
         return new string[] { "" };
     }
     }

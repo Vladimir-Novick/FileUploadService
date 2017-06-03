@@ -18,8 +18,6 @@ using System.IO;
 using System.Threading;
 using System.Configuration;
 
-
-
 namespace SGCombo.Services
 {
     public class SGCombo_UploadServiceStart
@@ -31,24 +29,15 @@ namespace SGCombo.Services
         public string FTP_userName { get; set; }
         public string FTP_password { get; set; }
 
-
-
         public static string logDirectory { get; set; } 
         public string NET_FTPServer { get; set; }
         public string NET_userName { get; set; }
         public string NET_password { get; set; }
 
-
         private Boolean deleteFolder { get; set; }
-
-     
-
-
 
         public SGCombo_UploadServiceStart()
         {
-
-
 
             watchDirectory = ConfigurationManager.AppSettings["CacheFolder"];
             logDirectory = watchDirectory + @"/Log";
@@ -65,7 +54,7 @@ namespace SGCombo.Services
             if (str_deleteFolder != null ) {
                 str_deleteFolder = str_deleteFolder.ToLower();
             }
-            
+
             if (str_deleteFolder == "true")
             {
                 deleteFolder = true;
@@ -75,16 +64,12 @@ namespace SGCombo.Services
                 deleteFolder = false;
             }
 
-
         }
-
-
 
         public void OnStop()
         {
             oSignalEvent.Reset();
         }
-
 
         ManualResetEvent oSignalEvent = new ManualResetEvent(false);
 
@@ -99,11 +84,8 @@ namespace SGCombo.Services
             }
         }
 
-
-
         public FileSystemWatcher watcher = null;
         private JobStack jobStack = null;
-
 
         public void OnStart()
         {
@@ -116,7 +98,6 @@ namespace SGCombo.Services
 
                 watcher.Path = watchDirectory;
 
-
                 watcher.Changed += new FileSystemEventHandler(OnChanged);
                 watcher.Created += new FileSystemEventHandler(OnCreated);
                 watcher.Deleted += new FileSystemEventHandler(OnDeleted);
@@ -125,8 +106,6 @@ namespace SGCombo.Services
                 watcher.EnableRaisingEvents = true;
 
                 oSignalEvent.Set();
-
-
 
             }
             catch (Exception ex)
@@ -138,8 +117,6 @@ namespace SGCombo.Services
             }
 
         }
-
-
 
         #region FileSystemWatcher
 
@@ -162,14 +139,10 @@ namespace SGCombo.Services
             //          Console.WriteLine("File Deleted: " + e.Name + " " + e.ChangeType);
         }
 
-
         private static Object lockOnRenamed = new Object();
 
         private void OnRenamed(object source, RenamedEventArgs e)
         {
-
-
-
 
             if (e.FullPath.Contains("_PART"))
             {
@@ -186,17 +159,11 @@ namespace SGCombo.Services
                 param.NET_userName = this.NET_userName;
                 param.NET_password = this.NET_password;
 
-
-
                 jobStack.StartFTPWorkProcess(param);
             }
         }
 
-
-
         #endregion
-
-
 
     }
 }

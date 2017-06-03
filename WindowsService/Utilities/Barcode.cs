@@ -18,10 +18,7 @@ namespace SGCombo.Extensions.Utils
     public class Barcode
     {
 
-       
         Font plainTextF = new Font("Arial", 13, FontStyle.Regular, GraphicsUnit.Pixel);
-
-
 
         public static System.Drawing.FontFamily LoadFontFamily(string fileName, out PrivateFontCollection fontCollection)
         {
@@ -29,7 +26,6 @@ namespace SGCombo.Extensions.Utils
             fontCollection.AddFontFile(fileName);
             return fontCollection.Families[0];
         }
-
 
         public Image stringToImage(string inputString,String barcodeFont)
         {
@@ -41,23 +37,17 @@ namespace SGCombo.Extensions.Utils
 
             try
             {
-        
 
             //remove the blank space after and before actual text
             string text = inputString.Trim();
 
-       
             Graphics graphics = Graphics.FromImage(bmp);
-
-
 
             int barCodewidth = (int)graphics.MeasureString(text, barCodeF).Width;
             int barCodeHeight = (int)graphics.MeasureString(text, barCodeF).Height;
 
             int plainTextWidth = (int)graphics.MeasureString(text, plainTextF).Width;
             int plainTextHeight = (int)graphics.MeasureString(text, plainTextF).Height;
-
-
 
             //image width 
             if (barCodewidth > plainTextWidth)
@@ -72,14 +62,10 @@ namespace SGCombo.Extensions.Utils
             }
             graphics = Graphics.FromImage(bmp);
 
-
-
             //Specify the background color of the image
             graphics.Clear(Color.White);
             graphics.SmoothingMode = SmoothingMode.AntiAlias;
             graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
-
-
 
             //Specify the text, font, Text Color, X position and Y position of the image
             if (barCodewidth > plainTextWidth)
@@ -115,16 +101,12 @@ namespace SGCombo.Extensions.Utils
                                     barCodeHeight);
             }
 
-
-
             graphics.Flush();
             graphics.Dispose();
             graphics = null;
 
-
             //if you want to save the image  uncomment the below line.
             //bmp.Save(@"d:\myimage.jpg", ImageFormat.Jpeg);
-
 
             }
             catch (Exception)
@@ -134,18 +116,17 @@ namespace SGCombo.Extensions.Utils
             {
                 if (barCodeF != null)
                 {
-                  
+
                     barCodeF.Dispose();
                     barCodeF = null;
                 }
                 if (family != null)
                 {
-                    
+
                     family.Dispose();
                     family = null;
                 }
             }
-
 
             return bmp;
         }

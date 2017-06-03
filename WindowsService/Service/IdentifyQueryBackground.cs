@@ -27,7 +27,6 @@ namespace SGCombo.Services
             deleteFolder = true;
         }
 
-
         public IdentifyQueryBackground(string _dirName, string _errorText, Boolean error)
         {
             directoryPatch = _dirName;
@@ -48,9 +47,7 @@ namespace SGCombo.Services
         public string NET_userName { get; set; }
         public string NET_password { get; set; }
 
-      
         public Boolean deleteFolder { get; set; }
-
 
     }
 }

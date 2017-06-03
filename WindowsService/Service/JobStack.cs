@@ -16,8 +16,6 @@ using System.Data;
 using System.IO;
 using SGCombo.Extensions;
 
-
-
 namespace SGCombo.Services
 {
     public class JobStack
@@ -43,10 +41,6 @@ namespace SGCombo.Services
             }
         }
 
-
-
-
-
         private static List<String> DirSearch(string sDir)
         {
             List<String> files = new List<String>();
@@ -69,14 +63,9 @@ namespace SGCombo.Services
             return files;
         }
 
-
         private static DataTable ReadBaseOrderData(string fileLocationDirectory)
         {
             DataTable dataTableUserInfo = null;
-
-
-
-
 
             return dataTableUserInfo;
 
@@ -86,9 +75,6 @@ namespace SGCombo.Services
         {
 
         }
-
-
-
 
         private static void BackgroundWorkerAsyncRequest_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -110,8 +96,6 @@ namespace SGCombo.Services
             DataRow row = null;
             String mantage = "";
 
-
-
             try
             {
                 List<String> filesList = DirSearch(sourceDirName);
@@ -132,7 +116,6 @@ namespace SGCombo.Services
                         try
                         {
 
- 
                                 ftp = new Ftp(identifiedQuery.FTPServer, identifiedQuery.FTP_userName, identifiedQuery.FTP_password);
 
                         }
@@ -143,8 +126,6 @@ namespace SGCombo.Services
 
                             return;
                         }
-
-
 
                     ftp.createDirectory(ftpPath);
                     ftp.upload(ftpFile, inpFile);
@@ -158,8 +139,6 @@ namespace SGCombo.Services
 
                  sourceDir = identifiedQuery.watchDirectory + "\\" + baseDirectory;
 
-
-
                  if (identifiedQuery.deleteFolder)
                  {
                      Directory.Delete(sourceDir, true);
@@ -170,9 +149,8 @@ namespace SGCombo.Services
                      completedDir = sourceDir.Replace("_PART", "_COMPLETED");
                      Directory.Move(sourceDir, completedDir);
                  }
-               
+
                  SimpleLog.WriteLog(SGCombo_UploadServiceStart.logDirectory, "Compleyed:  > "  + baseDirectory);
-                 
 
             }
             catch (Exception ex)
@@ -186,14 +164,7 @@ namespace SGCombo.Services
                 SimpleLog.WriteError(SGCombo_UploadServiceStart.logDirectory, "Error:  > " + completedDir + " Message " + ex.Message);
             }
 
-
         }
-
-
-
-        
-
-
 
         void BackgroundWorkerAsyncRequest_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -201,9 +172,6 @@ namespace SGCombo.Services
             IdentifyQueryBackground identifiedQuery = null;
             identifiedQuery = (IdentifyQueryBackground)e.Result;
 
-            // ---------------------
-
-            // ---------------------
 
             try
             {
@@ -228,19 +196,12 @@ namespace SGCombo.Services
                     backgroundWorker.Dispose();
                     backgroundWorker = null;
 
-
                 }
                 catch (Exception) { }
 
             }
 
-
-
         }
-
-
-
-
 
     }
 

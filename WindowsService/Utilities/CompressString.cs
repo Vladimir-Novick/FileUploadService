@@ -13,14 +13,10 @@ using System.IO;
 using System.IO.Compression;
 using System.Text;
 
-
 namespace SGCombo.SimpleUtils
 {
     public static class GZipCompressor
     {
-
-
-
 
         public static byte[] Decompress(byte[] gzip)
         {
@@ -47,7 +43,6 @@ namespace SGCombo.SimpleUtils
             }
         }
 
-
         /// <summary>
         /// Compresses byte array to new byte array.
         /// </summary>
@@ -63,8 +58,6 @@ namespace SGCombo.SimpleUtils
                 return memory.ToArray();
             }
         }
-
-
 
         /// <summary>
         /// Compresses the string.
