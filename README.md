@@ -1,4 +1,4 @@
-# Windows Service for upload files to FTP server automatically
+# Windows Service for automatically upload files to FTP server 
 
 Ability automatic upload a files from cache folder to FTP server.
 
