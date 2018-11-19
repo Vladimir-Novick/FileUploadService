@@ -1,18 +1,26 @@
 # Windows Service for Automatic File Upload to FTP server
-Ability automatic upload a files to FTP directory.
 
-## Installing UploadFTPService...
+Ability automatic upload a files from cache folder to FTP server.
+
+### Installing UploadFTPService...
 
 	c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\installUtil /i UploadFTPService.exe
 	
-## UnInstalling UploadFTPService...
+### UnInstalling UploadFTPService...
 
 	c:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\installUtil /u UploadFTPService.exe	
 	
-##FTP configuration :
+### FTP configuration :
 
- file App.config	
+ file App.config:	
 
+      <appSettings>
+         <add key="deleteFolder" value="true"/>    
+         <add key="CacheFolder" value="D:\ftp_cache"/>        
+         <add key="FTPServer" value="ftp://192.168.11.51"/>  
+         <add key="FTP_userName" value="order"/>
+         <add key="FTP_password" value="password"/>
+     </appSettings>
 
 
 Copyright (C) 2016-2018 by Vladimir Novick http://www.linkedin.com/in/vladimirnovick , 
