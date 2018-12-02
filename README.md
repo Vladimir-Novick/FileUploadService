@@ -1,6 +1,11 @@
 # Windows Service for automatically upload files to FTP server 
 
-Ability automatic upload a files from cache folder to FTP server.
+You can:
+
+- Easily share and send  files of any format to your team and clients;
+- Save and backup all your files with unlimited cloud storage on Real-Time;
+- Ability automatic upload a files from cache folder to FTP server.
+
 
 ### Installing UploadFTPService...
 
